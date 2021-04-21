@@ -1,23 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+import Title from './components/Title';
+import TodoList from "./components/TodoList"
+import BaseButton from './components/BaseButton/BaseButton'
+import Counter from './components/Counter'
 
 function App() {
+  const hello = 'Hello React';
+
+
+  function clickMini() { console.log('Click mini') }
+  function clickNormal() { console.log('Click normal') }
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Title title={hello} />
+
+      <Counter />
+
+      <BaseButton onClick={clickNormal} title='Normal Button' />
+      <BaseButton onClick={clickMini} title='Mini Button' variant='mini' />
+
+      
+      <TodoList />
+
     </div>
   );
 }
